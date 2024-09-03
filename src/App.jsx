@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function App() {
   const [x, setX] = useState(0);
@@ -7,7 +8,18 @@ function App() {
 
   return (
     <div id="demo">
-      <div id="box" />
+      <motion.div 
+        id="box" 
+        animate={{ 
+          x: x, 
+          y: y, 
+          rotate: rotate
+         }} 
+        transition={{
+          duration: 3, 
+          type: 'spring',
+          // bounce: accetta un valore da 0 a 1,
+        }}/>
 
       <div id="inputs">
         <p>
